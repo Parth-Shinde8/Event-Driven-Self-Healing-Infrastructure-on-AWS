@@ -1,7 +1,4 @@
-############################################
-# IAM ROLE FOR APP SERVER EC2
-############################################
-
+# IAM Role for App Server EC2
 resource "aws_iam_role" "app_ec2_role" {
   name = "aiops-app-ec2-role"
 
@@ -47,10 +44,7 @@ resource "aws_iam_instance_profile" "app_ec2_profile" {
   role = aws_iam_role.app_ec2_role.name
 }
 
-############################################
-# IAM ROLE FOR AIOPS LAMBDA
-############################################
-
+# IAM Role for Lambda
 resource "aws_iam_role" "lambda_role" {
   name = "aiops-lambda-role"
 

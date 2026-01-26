@@ -1,17 +1,11 @@
-############################################
-# PACKAGE LAMBDA CODE
-############################################
-
+# Package Lambda Code
 data "archive_file" "aiops_lambda_zip" {
   type        = "zip"
   source_dir  = "${path.module}/lambda"
   output_path = "${path.module}/aiops_lambda.zip"
 }
 
-############################################
-# LAMBDA FUNCTION
-############################################
-
+# Lambda Function
 resource "aws_lambda_function" "aiops" {
   function_name = "aiops-self-healing"
   runtime       = "python3.10"
